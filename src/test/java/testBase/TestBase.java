@@ -17,13 +17,13 @@ public class TestBase {
     static void setUp(){
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-dev-shm-usage");
-        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+//        ChromeOptions options = new ChromeOptions();
+//        options.addArguments("--disable-dev-shm-usage");
+//        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
         Configuration.browserCapabilities = capabilities;
         Configuration.browserSize = "1920x1080";
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
-        Configuration.browser = "chrome";
+//        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+//        Configuration.browser = "chrome";
 //        System.setProperty("web.chrome.driver", "src/test/resources/chromedriver");
 //        capabilities.setCapability("browserName", "chrome");
 //        capabilities.setCapability("browserVersion", "94.0");
