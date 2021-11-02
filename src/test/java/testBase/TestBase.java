@@ -6,6 +6,7 @@ import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
@@ -16,6 +17,9 @@ public class TestBase {
     static void setUp(){
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         DesiredCapabilities capabilities = new DesiredCapabilities();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-dev-shm-usage");
+        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
         Configuration.browserCapabilities = capabilities;
         Configuration.browserSize = "1920x1080";
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
