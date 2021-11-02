@@ -22,7 +22,8 @@ public class TestBase {
         options.addArguments("--disable-gpu");
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
         Configuration.browserCapabilities = capabilities;
-        Configuration.browserSize = "1920x1080";
+        Configuration.browserSize = "1024x768";
+        Configuration.headless = true;
 //        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
 //        Configuration.browser = "chrome";
 //        System.setProperty("web.chrome.driver", "src/test/resources/chromedriver");
