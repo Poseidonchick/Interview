@@ -22,8 +22,7 @@ public class TestBase {
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
         Configuration.browserCapabilities = capabilities;
         Configuration.browserSize = "1920x1080";
-//        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
-        System.setProperty("webdriver.chrome.driver", "_drivers/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         Configuration.browser = "chrome";
 //        System.setProperty("web.chrome.driver", "src/test/resources/chromedriver");
 //        capabilities.setCapability("browserName", "chrome");
