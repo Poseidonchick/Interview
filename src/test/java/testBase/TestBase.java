@@ -24,8 +24,8 @@ public class TestBase {
         Configuration.browserCapabilities = capabilities;
         Configuration.browserSize = "1024x768";
         Configuration.headless = true;
-//        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
-//        Configuration.browser = "chrome";
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
+        Configuration.browser = "chrome";
 //        System.setProperty("web.chrome.driver", "src/test/resources/chromedriver");
 //        capabilities.setCapability("browserName", "chrome");
 //        capabilities.setCapability("browserVersion", "94.0");
