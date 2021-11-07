@@ -1,6 +1,7 @@
 package tests;
 
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import testBase.TestBase;
 
 import static com.codeborne.selenide.Condition.text;
@@ -11,14 +12,17 @@ import static io.qameta.allure.Allure.step;
 public class TestForTeamCity extends TestBase {
     @Test
     public void urlOpenTest(){
-        step ("Открываем страницу", ()->{
-            open("https://yandex.ru");
-        });
-        step ("Вводим в поиск \"Котик\"", ()->{
-            $("#text").val("Котик").pressEnter();
-        });
-        step ("Проверяем, что найдено более миллиона результатов", ()->{
-            $(".serp-adv__found").shouldHave(text("млн результатов"));
-        });
+        step ("Открываем страницу", ()-> { open("https://inno.tech");});
+        step ("Переходим в раздел \"Карьера\"", ()->{ $(By.linkText("Карьера")).click();});
+        step ("Проверяем, что на странице присутствует надпись \"Нас уже более 5000" +
+                                                                    "сотрудников с опытом" +
+                                                                    " работы в передовых" +
+                                                                    " российских и зарубежных" +
+                                                                    " компаниях\"", ()->{
+                $(".header__title--_kOgO").shouldHave(text("Нас уже более 5000 " +
+                                                                    "сотрудников с опытом " +
+                                                                    "работы в передовых " +
+                                                                    "российских и зарубежных " +
+                                                                    "копаниях"));});
     }
 }
